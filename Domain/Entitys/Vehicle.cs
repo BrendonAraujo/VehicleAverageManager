@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Domain.Models;
+namespace Domain.Entitys;
 
-[Table("VEHICLE")]
 public class Vehicle
 {
     public virtual int Id { get; set; }

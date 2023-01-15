@@ -1,6 +1,5 @@
-﻿using Domain.Models;
+﻿using Domain.Entitys;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Domain.Data.Mappings;
@@ -24,7 +23,7 @@ public class VehicleConfiguration : IEntityTypeConfiguration<Vehicle>
             .HasMaxLength(7);
 
         builder.Property(vehicle => vehicle.IncialKm)
-            .HasColumnName("INICIALKM")
+            .HasColumnName("INCIALKM")
             .HasColumnType("FLOAT");
 
         builder.Property(vehicle => vehicle.ActuallKm)
