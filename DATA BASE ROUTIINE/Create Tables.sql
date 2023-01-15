@@ -12,6 +12,7 @@ CREATE TABLE [SUPPLY] (
     QUANTITY FLOAT,
     DATE_SUPPLY FLOAT,
     VALUE_SUPPLY FLOAT,
+    FOREIGN KEY (VEHICLEID) REFERENCES VEHICLE(ID)
 );
 
 -- Chage this to insert your first Vehicle
