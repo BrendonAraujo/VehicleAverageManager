@@ -12,25 +12,29 @@ public class VehicleController : ControllerBase
 	private IVehicleRepository _vehicleRepository; 
 	public VehicleController()
 	{
-		_vehicleRepository = new VehicleRepostory();
+        _vehicleRepository = new VehicleRepostory();
 	}
 
 	[HttpGet("Check")]
 	public ActionResult<bool> Check()
 	{
-		return true;
+        this.Response.Headers.AccessControlAllowOrigin = "*";
+        return true;
 	}
 
 	[HttpGet("Get/{vehiclePlate}")]
 	public ActionResult<Vehicle?> GetVehicle(string vehiclePlate)
 	{
-		return _vehicleRepository.GetByPlate(vehiclePlate);
+        this.Response.Headers.AccessControlAllowOrigin = "*";
+        return _vehicleRepository.GetByPlate(vehiclePlate);
 	}
 
 	[HttpGet("GetAll")]
 	public ActionResult<List<Vehicle>> GetVehicle()
 	{
-
-		return _vehicleRepository.GetAll();
+        this.Response.Headers.AccessControlAllowOrigin = "*";
+        var a =_vehicleRepository.GetAll(); 
+		return a;
+		
 	}
 }

@@ -19,25 +19,29 @@ public class SupplyController : ControllerBase
 	[HttpGet("Check")]
 	public ActionResult<bool> Check()
 	{
-		return true;
+        this.Response.Headers.AccessControlAllowOrigin = "*";
+        return true;
 	}
 	
 	[HttpGet("Get/{supplyId}")]
 	public ActionResult<Supply?> GetSupply(int supplyId)
 	{
-		return _supplyRepository.GetById(supplyId);
+        this.Response.Headers.AccessControlAllowOrigin = "*";
+        return _supplyRepository.GetById(supplyId);
 	}
 		
 	[HttpGet("GetByPlate/{vehiclePlate}")]
 	public ActionResult<List<Supply>> GetSupllyByVehicle(string vehiclePlate)
 	{
-		return _supplyRepository.GetByVehiclePlate(vehiclePlate);
+        this.Response.Headers.AccessControlAllowOrigin = "*";
+        return _supplyRepository.GetByVehiclePlate(vehiclePlate);
 	}
 	
 	[HttpPost("Add")]
 	public ActionResult<bool> AddSupply(AddSupplyRequest supply)
 	{
-		try
+        this.Response.Headers.AccessControlAllowOrigin = "*";
+        try
 		{
 			_supplyRepository.Insert(supply);
 			return true;	
